@@ -1,0 +1,88 @@
+<!--?xml version="1.0"?-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<title>Trabalho CG - X3D</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<link rel="stylesheet" type="text/css" href="css/colorpicker.css" />
+	<script type="text/javascript" src="scripts/x3dom.js"></script>
+	<script type="text/javascript">
+	<!--
+	// $(document).ready( function)
+	function funcao(obj,event){
+		alert(obj);
+	}
+	-->
+	</script>
+
+</head>
+<body>
+
+<div id="general">
+	
+	<div id="menu" width="200">
+	<ul>
+	    <li>
+			<em>Viewpoint:</em>
+           	<select id="viewpoint">
+				<option value="viewPerspective">Perspectiva</option>
+				<option value="viewFront">Frente</option>
+				<option value="viewBack">Trás</option>
+				<option value="viewOver">Acima</option>
+			</select>
+        </li>
+  		<li>
+			<em>Cor:</em>
+			<div id="colorSelector"><div></div></div>
+		</li>
+		<li>
+			<em>Rodas:</em>
+			<div>
+			<img src="images/car/felge1.jpg" class="roda" />
+			<img src="images/car/felge2.jpg" class="roda" />
+			<img src="images/car/felge3.jpg" class="roda" />
+			<img src="images/car/felge4.jpg" class="roda" />
+			<img src="images/car/felge5.jpg" class="roda" />
+			</div>
+		</li>
+    </ul>
+	</div>
+
+	<x3d id='the_element' width='800px' height='500px'>
+		<scene DEF='scene'>
+
+			<viewpoint id="viewPerspective" orientation='-0.600069 0.799493 -0.0269947 0.77042' position='3.05702 2.90676 4.27241' description="Perspectiva"></viewpoint>
+			<viewpoint id="viewFront" orientation='0 0 0 0' position='0 1 5' description="Frente"></viewpoint>
+			<viewpoint id="viewBack" orientation='0 1 0 3.14' position='0 1 -5' description="Tras"></viewpoint>
+			<viewpoint id="viewOver" orientation='-1 0 0 1.57' position='0 7 0' description="Acima"></viewpoint>
+			
+			<background skyColor='1 1 1'></background>
+			<directionalLight direction="-0.4 -0.9 0.3" intensity="0.5"></directionalLight>
+			<navigationInfo type='"examine"'></navigationInfo>
+
+			<transform DEF="t1" translation="-2 0 0">
+				<shape DEF="s1">
+					<appearance DEF="a1">
+						<material diffuseColor="0.5 0.5 1"></material>
+					</appearance>
+					<box DEF="b1" onClick="funcao('dsdd',event);"></box>
+				</shape>
+			</transform>
+			
+			<transform DEF="t2" translation="1 0 0">
+				<shape DEF="s2">
+					<appearance DEF="a2">
+						<material diffuseColor="0.3 0.7 1"></material>
+					</appearance>
+					<box DEF="b2" onClick="funcao('dsadsssa',event);"></box>
+				</shape>
+			</transform>
+				
+		</scene>
+	</x3d>
+
+</div>
+	
+</body>
+</html>
